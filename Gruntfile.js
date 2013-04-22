@@ -35,21 +35,21 @@ module.exports = function(grunt) {
 		coffee: {
 			app: {
 				src: ["coffee/app.coffee"],
-				dest: "./",
+				dest: "./app.js",
 				options: {
 					bare: true
 				}
 			},
 			settings: {
-				src: ["coffee/settings.coffee"],
-				dest: "./config/",
+				src: ["coffee/config.coffee"],
+				dest: "./config.js",
 				options: {
 					bare: true
 				}
 			}
 		},
 
-		lint: {
+		jslint: {
 			files: ["grunt.js", "lib/**/*.js", "test/**/*.js", "public/js/*.js"]
 		},
 
@@ -89,12 +89,14 @@ module.exports = function(grunt) {
 
 	// Grunt modules
 	grunt.loadNpmTasks("grunt-coffeelint");
-	grunt.loadNpmTasks("grunt-coffee");
+	grunt.loadNpmTasks("grunt-contrib-coffee");
+	grunt.loadNpmTasks("grunt-contrib-watch");
+	grunt.loadNpmTasks("grunt-jslint");
 
 
 	// Default task.
-	grunt.registerTask("dev", "coffeelint coffee lint");
+	grunt.registerTask("dev", ["coffeelint","coffee","jslint"]);
 
-	grunt.registerTask("default", "dev watch");
+	grunt.registerTask("default", ["dev","watch"]);
 
 };
