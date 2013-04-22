@@ -1,0 +1,34 @@
+{
+  "name": "teamgists",
+  "description": "Pull team member gists on a central repository",
+  "version": "0.0.1",
+  "homepage": "https://github.com/carlosrodriguez/#",
+  "contributors": [
+    {
+      "name": "Carlos Rodriguez",
+      "email": "crodriguez@bgtpartners.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/carlosrodriguez/#"
+  },
+  "bugs": {
+    "url": "https://github.com/carlosrodriguez/#/issues"
+  },
+  "main": "./app",
+  "engines": {
+    "node": "0.8.16"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "dependencies": {
+    "express":"3.2.0"
+  },
+  "devDependencies": {
+    "grunt": "0.4.1",
+    "grunt-coffeelint": "0.0.6",
+    "grunt-contrib-coffee": "0.7.0"
+  }
+}
