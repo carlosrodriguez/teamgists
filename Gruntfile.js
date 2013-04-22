@@ -54,7 +54,7 @@ module.exports = function(grunt) {
 		},
 
 		watch: {
-			files: ["<config:lint.files>", "coffee/**/*.coffee", "source/**/*"],
+			files: ["<config:lint.files>", "coffee/**/*.coffee"],
 			tasks: "default"
 		},
 
