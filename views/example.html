@@ -1,0 +1,33 @@
+{{#content}}
+<h1>{{title}}</h1>
+<div class="description">{{{description}}}</div>
+<p>Additional information:</p>
+<table class="table additional-instructions">
+	{{#instructiontable}}
+	<tr>
+		<td class="title">{{key}}: </td> 
+		<td>{{value}}</td>
+	</tr>
+	{{/instructiontable}}
+</table>
+
+<div class="well">
+	<h4>Sample Form</h4>
+	{{#config.validation}}
+	<p>Validation Status: <button class="btn btn-small btn-primary btn-success" id="validationToggle" type="button">On</button> </p>
+	<hr />
+	{{/config.validation}}
+	{{> form}}
+</div>
+<div id="results"></div>
+
+<button class="btn btn-small btn-primary" type="button" id="showsample">Show example code</button>
+
+<div class="hidden" id="samplecode">
+	<div class="code-sample">
+		<pre>
+		{{> sample}}
+		</pre>
+	</div>
+</div>
+{{/content}}

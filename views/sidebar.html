@@ -1,0 +1,8 @@
+<ul class="nav nav-tabs nav-pills nav-stacked">
+  {{#sidebar.sections}}
+  <li class="nav-header">{{name}}</li>
+  {{#pages}}
+  <li><a href="/example/{{id}}" title="{{title}}">{{title}}</a></li>
+  {{/pages}}
+  {{/sidebar.sections}}
+</ul>

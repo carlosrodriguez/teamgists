@@ -1,0 +1,39 @@
+/*
+* File name:   app.css
+* Description: Generic styles for the api sample site
+* Version:     1.0
+*/
+/* line 7, ../../source/sass/app.scss */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px; }
+
+/* line 15, ../../source/sass/app.scss */
+.api-sample .alert h4 {
+  margin: 12px 4px; }
+/* line 20, ../../source/sass/app.scss */
+.api-sample .sidebar-nav {
+  padding: 9px 0; }
+/* line 24, ../../source/sass/app.scss */
+.api-sample .code-sample {
+  margin-top: 24px; }
+/* line 28, ../../source/sass/app.scss */
+.api-sample .uploaddrop {
+  border: 1px dashed gray;
+  height: 120px;
+  padding: 10px;
+  width: 98%; }
+/* line 35, ../../source/sass/app.scss */
+.api-sample legend {
+  font-size: 12px;
+  margin-bottom: 6px; }
+/* line 40, ../../source/sass/app.scss */
+.api-sample hr {
+  margin: 4px 0; }
+/* line 44, ../../source/sass/app.scss */
+.api-sample .align-item {
+  margin-left: 178px; }
+/* line 49, ../../source/sass/app.scss */
+.api-sample .additional-instructions .title {
+  text-transform: capitalize;
+  width: 25%; }

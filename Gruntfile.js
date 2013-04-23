@@ -40,9 +40,16 @@ module.exports = function(grunt) {
 					bare: true
 				}
 			},
-			settings: {
+			config: {
 				src: ["coffee/config.coffee"],
 				dest: "./config.js",
+				options: {
+					bare: true
+				}
+			},
+			routes: {
+				src: ["coffee/routes.coffee"],
+				dest: "./routes/routes.js",
 				options: {
 					bare: true
 				}

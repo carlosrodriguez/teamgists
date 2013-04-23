@@ -1,0 +1,67 @@
+<form class="form-horizontal sampleform" id="createform">
+  <legend>All fields required</legend>
+  <div class="control-group">
+  {{> storyselect}}
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="Title">Title</label>
+    <div class="controls">
+      <input type="text" class="input" placeholder="Title" name="Title" id="Title" data-request-group="Story">
+      <span class="help-inline helper">130 characters maximum simple text</span>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="Text">Text</label>
+    <div class="controls">
+      <textarea rows="3" name="Text" id="Text" data-request-group="Story"></textarea>
+      <span class="help-inline helper">2500 characters maximum simple text</span>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="FirstName">First Name</label>
+    <div class="controls">
+      <input type="text" class="input" placeholder="First Name" name="FirstName" id="FirstName" data-request-group="Author" data-request-parent="Story">
+      <span class="help-inline helper">varchar(80)</span>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="LastName">Last Name</label>
+    <div class="controls">
+      <input type="text" class="input" placeholder="Last Name" name="LastName" id="LastName" data-request-group="Author" data-request-parent="Story">
+      <span class="help-inline helper">varchar(80)</span>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="CategoryId">Topic</label>
+    <div class="controls">
+      <select name="CategoryId" id="CategoryId" disabled="disabled" data-request-group="Criteria"></select>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="CountryId">Country</label>
+    <div class="controls">
+      <select name="CountryId" id="CountryId" data-request-group="Criteria"></select>
+    </div>
+  </div>
+  <input type="hidden" value="1035" name="LanguageID" id="LanguageID" data-request-group="Criteria" />
+  <div class="control-group">
+    <p class="align-item">Upload up to 3 videos or 10 images</p>
+    <ul id="uploadresults" class="align-item"></ul>
+    <label class="control-label" for="fileinput">File: </label>
+    <div class="controls" id="simpleuploadform">
+      <input type="file" class="input" name="fileinput" id="fileinput">
+      <span class="help-inline helper">Images: (png|jpg|gif - 5Mb) Videos: (mpg|mp4|mov|swf|flv|wmv|avi - 300Mb)</span>
+    </div>
+  </div>
+
+  <div class="sitespecific"></div>
+
+  <div class="control-group">
+    <div class="controls">
+      <button type="submit" class="btn submit-button">Create</button>
+      <input type="hidden" value="{{instructions.endpoint}}" name="endpoint" />
+      <input type="hidden" value="{{instructions.proxy}}" name="proxy" />
+      <input type="hidden" value="{{instructions.type}}" name="type" />
+    </div>
+  </div>
+</form>

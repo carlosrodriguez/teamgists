@@ -25,6 +25,8 @@
   },
   "dependencies": {
     "express":"3.2.0",
+    "express-partials": "0.0.6",
+    "hogan-express": "0.3.3",
     "lodash":"1.2.0",
     "request": "2.11.4"
   },
