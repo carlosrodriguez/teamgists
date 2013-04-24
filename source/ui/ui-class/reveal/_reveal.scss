@@ -1,0 +1,23 @@
+/*
+* File name:   _reveal.scss
+* Description: Modified Reveal modal/lightbox
+* Version:     1.0
+*/
+
+$prefix: ".ui-reveal";
+
+#{$prefix} {
+	
+}
+
+.reveal-modal-bg {
+	z-index: 90000;
+}
+
+.reveal-modal {
+	z-index: 90100;
+}
+
+.flix-video {
+	margin-bottom: 0;
+}

@@ -2,10 +2,8 @@ var config, lodash;
 
 lodash = require('lodash');
 
-config = require('../config.js');
-
 config = {
-  project: config
+  project: ''
 };
 
 exports.index = function(req, res) {

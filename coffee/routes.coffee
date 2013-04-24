@@ -2,10 +2,10 @@
 lodash = require 'lodash'
 
 # Project Settings
-config = require '../config.js'
+# config = require '../config.js'
 
 config =
-  project: config
+  project: ''  #config
 
 # Homepage
 exports.index = (req, res) ->

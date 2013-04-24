@@ -1,0 +1,184 @@
+ /*
+* File name:   _icon.scss
+* Description: Sprite icons we can call in from classes
+* Version:     1.0
+*/
+
+$prefix: ".ui-icon-";
+$icons: sprite-map("icons/*.png", $spacing: 160px); 
+
+/*
+*	Social media icons
+*/
+
+#{$prefix}facebook,
+#{$prefix}pinterest,
+#{$prefix}twitter,
+#{$prefix}google,
+#{$prefix}youtube {
+	@include transitions;
+	@include inline-block();
+	width: 34px;
+	height: 33px;
+	text-align: left;
+	*text-transform: capitalize; // crazy IE7 bug fix for indents -.-
+	*font-size:0;
+	*line-height:0;
+	text-indent: -5000px;
+	margin-left: 10px;
+
+	&:hover {
+		@include opacity(.7);
+	}
+}
+#{$prefix}facebook {
+	background: sprite($icons, facebook) no-repeat;
+}
+#{$prefix}pinterest {
+	background: sprite($icons, pinterest) no-repeat;
+}
+#{$prefix}twitter {
+	background: sprite($icons, twitter) no-repeat;
+}
+#{$prefix}google {
+	background: sprite($icons, google) no-repeat;
+}
+#{$prefix}youtube {
+	background: sprite($icons, youtube) no-repeat;
+}
+
+#{$prefix}badge,
+#{$prefix}house,
+#{$prefix}heart,
+#{$prefix}phone {
+	display: block;
+	width: 100%;
+	height: 68px;
+	margin: 0 auto 9px;
+}
+#{$prefix}badge {
+	background: sprite($icons, badge) no-repeat;
+	width: 50px;
+}
+#{$prefix}house {
+	background: sprite($icons, house) no-repeat;
+	width: 72px;
+}
+#{$prefix}heart {
+	background: sprite($icons, heart) no-repeat;
+	width: 62px;
+}
+#{$prefix}phone {
+	background: sprite($icons, phone) no-repeat;
+	width: 56px;
+}
+#{$prefix}call {
+	background: sprite($icons, call) no-repeat;
+	width: 54px;
+}
+#{$prefix}callalt{
+	background: sprite($icons, callalt) no-repeat;
+	width: 54px;
+}
+#{$prefix}bigcart {
+	background: sprite($icons, bigcart) no-repeat;
+}
+#{$prefix}chat {
+	background: sprite($icons, chat) no-repeat;
+}
+// #{$prefix}getarrow {
+// 	background: sprite($icons, getarrow) no-repeat;
+// 	@include inline-block;
+// 	width: 13px; 
+// 	height: 34px;
+// }
+
+#{$prefix}uparrow {
+	background: sprite($icons, uparrow, 8px, 10px) no-repeat;
+}
+
+#{$prefix}account {
+	background: sprite($icons, person) no-repeat;
+	@include inline-block;
+	width: 15px; height: 14px;
+	margin-right: 6px;
+	margin-top: -3px;
+}
+#{$prefix}cart {
+	background: sprite($icons, cart) no-repeat;
+	@include inline-block;
+	width: 16px; height: 16px;
+	margin-right: 6px;
+	margin-top: -3px;
+}
+
+#{$prefix}energy {
+	background: sprite($icons, energy) no-repeat;
+	@include inline-block;
+	width: 53px; 
+	height: 53px;
+}
+
+// Media 
+#{$prefix}play-small {
+	background: sprite($icons, play-small, 42px, 22px) no-repeat;
+	display: block;
+	width: 41px; 
+	height: 41px;
+	text-indent: -9999px;
+}
+
+#{$prefix}slider-prev {
+	background: sprite($icons, slider-prev, 16px, 34px) no-repeat;
+	display: block;
+	width: 41px; 
+	height: 90px;
+	text-indent: -9999px;
+}
+#{$prefix}slider-next {
+	background: sprite($icons, slider-next, 16px, 34px) no-repeat;
+	display: block;
+	width: 41px; 
+	height: 90px;
+	text-indent: -9999px;
+} 
+
+// Logos
+#{$prefix}pulse {
+	background: sprite($icons, pulse) no-repeat;
+	display: block;
+	width: 106px; 
+	height: 32px;
+	text-indent: -9999px;
+}
+
+#{$prefix}pulselarge {
+	background: sprite($icons, pulse-large) no-repeat;
+	display: block;
+	width: 198px; 
+	height: 59px;
+	text-indent: -9999px;
+}
+
+#{$prefix}expand {
+	background: sprite($icons, expand) no-repeat;
+	@include inline-block;
+	width: 12px; 
+	height: 5px;
+	text-indent: -9999px;
+}
+#{$prefix}expand2 {
+	background: sprite($icons, expand2) no-repeat;
+	@include inline-block;
+	width: 24px; 
+	height: 10px;
+	text-indent: -9999px;
+}
+
+#{$prefix}play {
+	background: sprite($icons, play) no-repeat;
+	@include inline-block;
+	width: 133px; 
+	height: 77px;
+	text-indent: -9999px;
+}

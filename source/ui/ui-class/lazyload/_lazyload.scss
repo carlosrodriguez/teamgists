@@ -1,0 +1,16 @@
+ /*
+* File name:   _lazyload.scss
+* Description: Lazy loading images via JS
+* Version:     1.0
+*/
+
+$prefix: ".ui-lazyload";
+
+#{$prefix} {
+	//background: image-url("loader.gif") no-repeat center center;
+	//height: 100px;
+}
+
+.ui-loader {
+	//background: image-url("loader.gif") no-repeat center center;
+}

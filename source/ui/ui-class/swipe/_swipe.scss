@@ -1,0 +1,115 @@
+ /*
+* File name:   _swipe.scss
+* Description: Swipe events plugin class
+* Version:     1.0
+*/
+$prefix: ".ui-swipe";
+
+#{$prefix} {
+	@media screen and (max-width: 767px) {
+	
+		position: relative;
+
+		.swipe-wrapper {
+			position: relative;
+		}
+
+		.swipe-slide {
+			@include transitions;
+			position: absolute!important;
+			@include inline-block();
+			vertical-align: top;
+			left: -100%;
+			padding-left: 40px;
+			padding-right: 40px;
+			width:100% !important;
+			@include opacity(.5);
+
+			&.active {
+				@include transitions;
+				left: 0;
+				position: relative!important;
+				@include opacity(1);
+
+				& ~ .swipe-slide {
+					@include transitions;
+					left: 100%;
+					width: 100% !important;
+				}
+			}
+
+			&.nexti {
+				left: 90%!important;
+			}
+
+			&.previ {
+				left: -90%!important;
+			}
+
+			.image img {
+				width: 100%;
+			}
+		}
+
+		.next, .prev {
+			position: absolute;
+			bottom: 0;
+			margin-top: -35px;
+			height: 70px;
+			width: 30px;
+			background: $color-prime;
+			cursor: pointer;
+		}
+		.next {
+			right: 0;
+		}
+		.prev {
+			left: 0;
+		}
+
+		.bullets {
+			display: block;
+			clear: both;
+
+			span {
+				@include inline-block();
+				@include transitions;
+				height: 10px; width: 10px;
+				background: darken(#fff, 15%);
+				@include border-radius(6px);
+				margin: 0 5px;
+
+				&.active {
+					background: $mainColor;
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 480px) {
+		.swipe-slide {
+			&.nexti {
+				left: 84%!important;
+			}
+
+			&.previ {
+				left: -84%!important;
+			}
+		}
+	}
+}
+
+
+
+.notransition,
+.notransition .swipe-slide {
+	-webkit-transition-duration: 0 !important;
+	   -moz-transition-duration: 0 !important;
+	    -ms-transition-duration: 0 !important;
+	        transition-duration: 0 !important;
+
+	-webkit-transition-delay: 0 !important;
+	   -moz-transition-delay: 0 !important;
+	    -ms-transition-delay: 0 !important;
+	        transition-delay: 0 !important;
+}

@@ -1,0 +1,74 @@
+ /*
+* File name:   _span.scss
+* Description: Our full width styles for section backgrounds/borders
+* Version:     1.0
+*/
+
+@import "compass/css3/images";
+
+$prefix: ".ui-span-";
+
+#{$prefix}white,
+#{$prefix}gray,
+#{$prefix}lightblue,
+#{$prefix}blue {
+	padding: 30px 0;
+
+	&.border {
+		border-top: 1px dotted lighten($mainColor, 40%);
+	}
+
+	&.no-padding-bottom {
+		padding-bottom: 0;
+	}
+
+	@media screen and (max-width: 767px) {
+		margin: 20px 10px;
+		@include box-shadow(0 0 2px rgba(0,0,0,.5));
+
+		&.border {
+			border-top: none;
+		}
+	}
+
+	.footer & {
+		@media screen and (max-width: 767px) {
+			margin-top: 0; margin-bottom: 0;
+			padding: 20px 0;
+		}
+	}
+}
+#{$prefix}white {
+	background: #fff;
+}
+
+#{$prefix}blue {
+	background: $mainColor;
+	color: #fff !important;
+
+	h1,h2,h3,h4,h5, p {
+		color: #fff !important;
+	}
+
+	&.border-bottom {
+		@include box-shadow(inset 0 -115px rgba(255, 255, 255, 1));
+
+		@media screen and (max-width: 767px) {
+			@include box-shadow(0 0 2px rgba(0,0,0,.5));
+		}
+	}
+
+	@media screen and (max-width: 767px) {
+		border: 1px solid #fff;
+		behavior: url(../lib/pie/PIE.htc);
+	}
+}
+
+#{$prefix}lightblue {
+	background: #f3f9fb;
+}
+
+#{$prefix}gray {
+	background: #f6fafc;
+	@include background-image(linear-gradient(bottom, #f6fafc 0%, #fff 100%));
+}

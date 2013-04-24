@@ -1,0 +1,119 @@
+ /*
+* File name:   _button.scss
+* Description: Button styling classes
+* Version:     1.0
+*/
+
+
+$prefix: ".ui-button";
+
+#{$prefix} {
+	position: relative;
+	padding-right: 10px;
+
+	.arrow-right {
+		display: block;
+		position: absolute;
+		right: -6px;
+		top: 33%;
+		width: 0; 
+		height: 0; 
+		border-top: 4px solid transparent;
+		border-bottom: 4px solid transparent;
+		border-left: 6px solid $color-link;
+	}
+
+	@mixin basebutton() {
+		@include transitions;
+		@include inline-block();
+		padding: 12px 20px;
+		font: {
+			style: italic;
+			weight: 600;
+			size: 14px;
+		}
+		text-transform: uppercase;
+		line-height: 14px;
+		cursor: pointer;
+
+		.arrow-right {
+			border-color: #fff;
+		}
+	}
+
+	&.grey {
+		@include basebutton;
+		background: $secondaryColor;
+		color: #fff;
+		margin: 0;
+		border: none;
+
+		&.lighter {
+			background: lighten($secondaryColor, 10%);
+		}
+	}
+
+	&.blue {
+		@include basebutton;
+		background: #2c9edb;
+		color: #fff;
+
+		&:hover {
+			background: $color-link;
+		}
+	}
+
+	&.yellow {
+		@include basebutton;
+		background: $altColor;
+		color: $color-second;
+
+		&:hover, &:active {
+			background: lighten($altColor, 10%);
+		}
+	}
+
+	&.cta {
+		@include h4;
+		border: none;
+		color: $color-cta;
+		cursor: pointer;
+		margin: 10px 0 0;
+		padding: 8px;
+		text-align: center;
+		text-transform: uppercase;
+		width: 100%;
+		display: block;
+		line-height: 1.2em;
+
+		&.main {
+			background: $color-prime;
+			&:hover {
+				background-color: #2c9edb;
+			}
+		}
+
+		&.form {
+			background: #c62a2f;
+			position: relative;
+			// z-index: 2;
+
+			&.disabled {
+				background: #e38d1f !important;
+				color: #b67a2e !important;
+			}
+		}
+	}
+
+	&.radius {
+		@include border-radius(4px);
+	}
+
+	&.full {
+		display: block !important;
+		padding-left: 3px;
+		padding-right: 3px;
+		text-align: center;
+		width: 100%;
+	}
+}

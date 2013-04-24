@@ -1,0 +1,9 @@
+.sidebar {
+	@include grid-column(3);
+	border: 1px solid black;
+}
+
+.main-content {
+	@include grid-column(9);
+	border: 1px solid black;
+}

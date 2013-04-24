@@ -1,0 +1,86 @@
+ /*
+* File name:   _simpleslash.scss
+* Description: Simple text elements seperated by a slash /
+* Version:     1.0
+*
+* Notes:       Contains some overwrites for foundation tabs
+*/
+
+$prefix: ".ui-simpleslash";
+
+#{$prefix} {
+	border: none;
+
+	dd, li {
+		float: none;
+		border: none;
+		@include inline-block();
+		text-transform: uppercase;
+		font: {
+			size: 18px;
+			weight: 600;
+		}
+		letter-spacing: .1em;
+
+		&.separator {
+			color: #b1c6dd;
+			font: {
+				size: 26px;
+				weight: 300;
+			}
+			padding: 0 6px;
+		}
+
+		a {
+			color: #b1c6dd;
+			font: {
+				size: 22px;
+				weight: 400;
+			}
+			padding: 0 15px;
+
+			&:active {
+				font: {
+					weight: 400;
+				}
+			}
+		}
+
+		&.active {
+			border: none;
+			margin-top: 0;
+
+			a {
+				border: none;
+				color: $color-prime;
+				font: {
+					weight: 400;
+				}
+			}
+		}
+
+		&:hover {
+			a {
+				color: $color-prime;
+			}
+		}
+	}
+
+	@media screen and (max-width: 400px) {
+		dd, li {
+			&.separator {
+				font: {
+					size: 16px;
+				}
+				padding: 0 3px;
+			}
+
+			a {
+				font: {
+					size: 14px;
+				}
+				padding: 0 6px;
+			}
+		}
+	}
+}

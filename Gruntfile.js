@@ -56,16 +56,56 @@ module.exports = function(grunt) {
 			}
 		},
 
-		jslint: {
-			files: ["grunt.js", "lib/**/*.js", "test/**/*.js", "public/js/*.js"]
+		compass: {
+			build: {
+				options: {
+					config: 'config.rb'
+				}
+			}
+		},
+
+		copy: {
+			build: {
+				files: [
+					{
+						expand: true,
+						cwd: 'source/',
+						src: [
+							'ui/**/*.css',
+							'ui/**/*.js',
+							'ui/**/*.jpg',
+							'ui/**/*.gif',
+							'ui/**/*.png'
+						],
+						dest: 'public'
+					}
+				]
+			}
 		},
 
 		watch: {
-			files: ["<config:lint.files>", "coffee/**/*.coffee"],
-			tasks: "default"
+			coffee: {
+				files: [
+					'coffee/**/*.coffee'
+				],
+				tasks: ["coffeelint","coffee"]
+			},
+			scss: {
+				files: [
+					"source/ui/**/*.scss"
+				],
+				tasks: ['scss','copy']
+			},
+			js: {
+				files: [
+					'app.js', 'routes/routes.js'
+				],
+				tasks: 'jslint'
+			}
 		},
 
 		jshint: {
+			files: ["Gruntfile.js", "lib/**/*.js", "test/**/*.js", "public/js/*.js"],
 			options: {
 				curly: true,
 				eqeqeq: true,
@@ -77,19 +117,19 @@ module.exports = function(grunt) {
 				undef: true,
 				boss: true,
 				eqnull: true,
-				node: true
-			},
-			globals: {
-				exports: true,
-				document: true,
-				window: true,
-				$: true,
-				jQuery: true,
-				_: true,
-				io: true,
-				Mustache: true,
-				HULK: true,
-				Handlebars: true
+				node: true,
+				globals: {
+					exports: true,
+					document: true,
+					window: true,
+					$: true,
+					jQuery: true,
+					_: true,
+					io: true,
+					Mustache: true,
+					HULK: true,
+					Handlebars: true
+				}
 			}
 		}
 	});
@@ -98,11 +138,14 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks("grunt-coffeelint");
 	grunt.loadNpmTasks("grunt-contrib-coffee");
 	grunt.loadNpmTasks("grunt-contrib-watch");
-	grunt.loadNpmTasks("grunt-jslint");
+	grunt.loadNpmTasks("grunt-contrib-compass");
+	grunt.loadNpmTasks("grunt-contrib-copy");
+	grunt.loadNpmTasks("grunt-contrib-jshint");
 
 
 	// Default task.
-	grunt.registerTask("dev", ["coffeelint","coffee","jslint"]);
+	grunt.registerTask("dev", ["compass","coffeelint","coffee","jshint","copy"]);
+	grunt.registerTask('scss', ['compass']);
 
 	grunt.registerTask("default", ["dev","watch"]);
 

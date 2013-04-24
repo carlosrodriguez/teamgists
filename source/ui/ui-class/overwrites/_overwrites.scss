@@ -1,0 +1,11 @@
+ /*
+* File name:   _overwrites.scss
+* Description: Overwrites some base settings coming from foundation
+* Version:     1.0
+*/
+
+.tabs-content {
+	> .active {
+		@include animate(fadein, '1s');
+	}
+}
