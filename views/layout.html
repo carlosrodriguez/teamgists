@@ -1,20 +1,9 @@
 {{> head}}  
   <body>
     {{> nav}}
-    <div class="container">
-      <div class="row">
-        <div class="span3" id="navbar">
-            <h2>{{project.title}}</h2>
-            {{> sidebar}}
-        </div><!--/span-->
-        <div class="span9 pull-right">
-          <div id="main" class="api-sample">
-          	{{> content}}
-          </div>
-        </div><!--/span-->
-      </div>
-    </div>
-    
+
+    {{> content}}
+
     {{> footer}}
 
   </body>
